@@ -1,13 +1,20 @@
 {
-    "experimentalServices": {
-        "frontend": {
-            "root": "frontend",
-            "routePrefix": "/",
-            "framework": "vite"
-        },
-        "backend": {
-            "root": "backend",
-            "routePrefix": "/_/backend"
-        }
+  "installCommand": "npm install",
+  "buildCommand": "npm install --prefix frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "functions": {
+    "api/[...path].js": {
+      "runtime": "nodejs22.x"
     }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ]
 }
