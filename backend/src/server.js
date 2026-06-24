@@ -35,6 +35,10 @@ app.get(/^(?!\/api).*/, (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Backend iniciado en puerto ${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Backend iniciado en puerto ${port}`);
+  });
+}
+
+module.exports = app;
