@@ -1,0 +1,21 @@
+{
+  "name": "loyverse-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo con frontend React y backend Express para Loyverse",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start": "npm --prefix backend run start",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
